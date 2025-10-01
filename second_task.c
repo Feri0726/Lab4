@@ -18,8 +18,27 @@ for any other character it returns the original character.
 
 
 #include <stdio.h>
+#include <ctype.h>
+int vov(char x){
+    int v = 0;
+    if (x=='a' || x=='e' || x=='i' || x=='o' || x=='u'){
+        v = 1;
+    }
+    if (x=='A' || x=='E' || x=='I' || x=='O' || x=='U'){
+        v = 2;}
+    return v;
+}
 
 int main(){
-
+    char c;
+    while (scanf("%c", &c) == 1) {
+        if (vov(c) == 1){
+                printf("%ch%c", c, c);}
+        if (vov(c) == 0){
+             printf("%c", c);
+            }
+        if (vov(c) == 2){
+            printf("%ch%c", c, tolower(c));}
+    }
 return 0;
 }
